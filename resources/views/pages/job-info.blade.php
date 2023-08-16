@@ -17,7 +17,7 @@
         <div><img src="{{asset('images/no-image.png')}}" alt=""></div>
         <div><span style="font-size: 2em;">{{ $job->title }}</span></div>
         <div><h3>{{ $job->company }}</h3></div>
-        <div class="tags-container"><a href="">{{ $job->tags }}</a></div>
+        <x-job-info-tags :tagsCsv="$job->tags" />
         <div>
             <img src="{{asset('images/location.png')}}" alt=""
             style="height: 15px; width: 15px;"

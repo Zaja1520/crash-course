@@ -8,11 +8,7 @@
         <a href="/job-info/{{$job->id}}">{{ $job->title }}</a>
         </h2>
         <div>{{$job->company}}</div>
-        <ul class="horizontal-list">
-            <li><a href="#">laravel</a></li>
-            <li><a href="#">API</a></li>
-            <li><a href="#">Backend</a></li>
-        </ul>
+        <x-listings-tag :tagsCsv="$job->tags"/>
         <div><img src="{{asset('images/location.png')}}" alt=""
             style="height: 15px; width: 15px;"
             >{{$job->location}}</div>

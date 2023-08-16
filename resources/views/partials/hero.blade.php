@@ -2,7 +2,7 @@
     <div style="background-image: url('images/laravel-logo.png')"></div>
     <div>
       <h1 style="color: white;">
-        Lara<span class="text-black">Gigs</span>
+        LARA<span class="text-black">GIGS</span>
       </h1>
       <p>
         Find or post Laravel jobs & projects
