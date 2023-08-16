@@ -16,23 +16,8 @@
 @include('partials.search')
 <div class="job-container">
     @foreach ($jobs as $job)
-    <div class="card" >
-    <div class="job-image-container"><img src="{{asset('images/no-image.png')}}" alt=""></div>
-    <div class="job-preview-info">
-        <h2>
-        <a href="/job-info/{{$job->id}}">{{ $job->title }}</a>
-        </h2>
-        <div>{{$job->company}}</div>
-        <ul class="horizontal-list">
-            <li><a href="#">laravel</a></li>
-            <li><a href="#">API</a></li>
-            <li><a href="#">Backend</a></li>
-        </ul>
-        <div><img src="{{asset('images/location.png')}}" alt=""
-            style="height: 15px; width: 15px;"
-            >{{$job->location}}</div>
-        </div>
-    </div>
+    {{-- pass the data to the job-listings component --}}
+    <x-job-listings :job="$job"/>
     @endforeach
 </div>
 @endsection
