@@ -18,9 +18,9 @@
     @foreach ($jobs as $job)
     <div class="card" >
     <div class="job-image-container"><img src="{{asset('images/no-image.png')}}" alt=""></div>
-    <div>
+    <div class="job-preview-info">
         <h2>
-        <a href="/job-listings/{{$job->id}}">{{ $job->title }}</a>
+        <a href="/job-info/{{$job->id}}">{{ $job->title }}</a>
         </h2>
         <div>{{$job->company}}</div>
         <ul class="horizontal-list">
@@ -31,7 +31,7 @@
         <div><img src="{{asset('images/location.png')}}" alt=""
             style="height: 15px; width: 15px;"
             >{{$job->location}}</div>
-    </div>
+        </div>
     </div>
     @endforeach
 </div>

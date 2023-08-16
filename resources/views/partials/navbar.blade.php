@@ -28,8 +28,8 @@
     }
 
     ul {
-      padding-top: 10px;
-      margin: 0;
+      padding-top: 30px;
+      margin-left: -20px;
       display: grid;
       grid-template-columns: 150px 150px; 
       align-items: center;
@@ -42,8 +42,8 @@
       color: black;
     }
     .logo{
-      height: 50px;
-      width: 60px;
+      height: 80px;
+      width: 70px;
     }
 
   </style>

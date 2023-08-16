@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\JobController;
+// use App\Http\Controllers\Api\JobControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,4 @@ Route::post('/login', [UserController::class, 'login']);
 
 //Job listing controller
 Route::get('/job-listings', [JobController::class, 'joblistings']);
-Route::get('/job-info/{id}', [JobController::class, 'jobInfo']);
+Route::get('/job-info/{id}', [JobController::class, 'jobProfile']);    

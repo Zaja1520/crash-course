@@ -10,7 +10,7 @@
       <div>
         @auth
         @else
-        <a href="/register">Sign
+        <a class="register-shortcut" href="/register">Sign
           Up to List a Gig</a>
         @endauth
       </div>

@@ -13,16 +13,24 @@ grid-template-columns: 150px 1fr;
 width: 100%;
 height: 100%;
 }
+.job-preview-info{
+    margin-left: 15px;
+}
 .section {
 margin: 10px 0px;
 background-color: orangered; 
 display: grid; 
+text-align: center;
 justify-content: center;
 color: white;
 }
 .search-form {
 place-self: center;
 
+}
+
+.register-shortcut{
+    color: white;
 }
 
 .search-container {
@@ -45,13 +53,29 @@ background-color: #f9f9f9;
 margin-bottom: 10px;
 }
 
-ul.horizontal-list {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    float: left;
+.footer-container {
+    text-align: center;
+    background-color: indianred;
+    color: white;
 }
 
-ul.horizontal-list li {
-    margin-right: 20px;
+.footer-container a {
+    color: white;
+}
+.horizontal-list{
+    display: flex;
+    padding:0px;
+    justify-content:start;
+    list-style-type:none;
+    margin: 0px;
+}
+.horizontal-list li {
+    margin-right: 5px;
+}
+.horizontal-list li a {
+    background-color: rgb(23, 21, 21);
+    border-radius: 6px;
+    color: white;
+    font-size: 10px;
+    padding: 5px;
 }
