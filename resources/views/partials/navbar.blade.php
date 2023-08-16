@@ -19,19 +19,17 @@
   <style>
     .navbar-container{
       display: grid;
-      grid-template-columns: 150px 1fr; 
-    }
-
-    .logo-container{
-      background-color: pink;
+      grid-template-columns: 1fr 1fr; 
     }
 
     .nav-link-container{
-      background-color: pink;
       justify-self: end;
+      
     }
 
     ul {
+      padding-top: 10px;
+      margin: 0;
       display: grid;
       grid-template-columns: 150px 150px; 
       align-items: center;
@@ -40,14 +38,18 @@
 
     li, a{
       text-decoration: none;
-      list-style: none;
+      list-style-type: none;
       color: black;
+    }
+    .logo{
+      height: 50px;
+      width: 60px;
     }
 
   </style>
 @endsection
   <nav class="navbar-container">
-      <div class="logo-container">LOGO</div>
+      <div class="logo-container"><img class="logo" src="{{asset('images/logo.png')}}" alt=""></div>
       <div class="nav-link-container">
         <ul>
           <li><a href="#">Register</a></li>
