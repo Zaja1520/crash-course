@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserControllerApi;
+use App\Http\Controllers\Api\JobControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/user-listings', [UserControllerApi::class, 'userlistings']);
 Route::get('/user-profile/{id}', [UserControllerApi::class, 'userProfile']);
 Route::post('/user-profile/{id}', [UserControllerApi::class, 'updateProfile']);
+
+//Job Data and Api
+Route::get('/job-listings', [JobControllerApi::class, 'jobListings']);
+Route::get('/job-profile/{id}', [JobControllerApi::class, 'jobProfile']);
+

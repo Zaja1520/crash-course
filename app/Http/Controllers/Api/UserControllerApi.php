@@ -17,10 +17,5 @@ class UserControllerApi extends Controller
         $user = User::where('id', $id)->first();
         return response()->json($user);
     }
-    public function updateUser(StorePostRequest $request, Post $post)
-    {
-        $post->update($request->all());
-        
-        return new PostResource($post);
-    }
+
 }
