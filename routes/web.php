@@ -29,4 +29,5 @@ Route::post('/login', [UserController::class, 'login']);
 
 //Job listing controller
 Route::get('/job-listings', [JobController::class, 'joblistings']);
+// Route::get('/job-listings/?={tag}', [JobController::class, 'jobListings']);
 Route::get('/job-info/{id}', [JobController::class, 'jobProfile']);    

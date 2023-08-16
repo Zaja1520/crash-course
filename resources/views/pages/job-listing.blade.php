@@ -15,9 +15,13 @@
 @include('partials.hero')
 @include('partials.search')
 <div class="job-container">
+    @if (count($jobs) > 0) 
     @foreach ($jobs as $job)
     {{-- pass the data to the job-listings component --}}
     <x-job-listings :job="$job"/>
     @endforeach
+    @else
+        <p>no listing found</p>
+    @endif
 </div>
 @endsection

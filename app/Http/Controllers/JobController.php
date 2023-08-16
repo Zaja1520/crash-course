@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class JobController extends Controller
 {
     public function joblistings(Request $request){
-        $jobs = Listings::all();
+        $jobs = Listings::latest()->filter(request(['tag']))->get();
         return view('pages.job-listing', ['jobs' => $jobs]);
     }
     public function jobProfile(Request $request, $id){
