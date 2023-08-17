@@ -11,7 +11,7 @@ class JobController extends Controller
     public function joblistings(Request $request)
     {
         // create orm filter through search or by tag
-        $jobs = Listings::latest()->filter(request(['tag', 'search']))->get();
+        $jobs = Listings::latest()->filter(request(['tag', 'search']))->Paginate(2);
         // pass the data on job-listing view and render the view
         return view('pages.job-listing', ['jobs' => $jobs]);
     }

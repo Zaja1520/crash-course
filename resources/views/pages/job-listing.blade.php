@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/flash-message.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
 @endsection
 
 @section('content')
@@ -25,6 +26,9 @@
     @else
         <p>no listing found</p>
     @endif
+</div>
+<div class="pagination">
+    {{$jobs->links()}}
 </div>
 @endsection
 
