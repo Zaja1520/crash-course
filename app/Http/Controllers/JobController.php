@@ -41,9 +41,15 @@ class JobController extends Controller
             'website' => 'required',
             'tags' => 'required',
         ]);
+        // check if logo exist in request
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+        // store the form fields
         $storeJob = Listings::create($formFields);
         if ($storeJob) {
             //return with flash message
+
             return redirect('/job-listings')->with('message', 'listing created successfully');
         }
         else{

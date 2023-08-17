@@ -2,7 +2,7 @@
 @props(['job']) 
 {{-- pass the components in the card component --}}
     <x-card style="padding:20px;">  {{-- pass the attributes to the card component --}}
-    <div class="job-image-container"><img src="{{asset('images/no-image.png')}}" alt=""></div>
+    <div class="job-image-container"><img src="{{$job->logo ? asset('storage/' . $job->logo) : asset('images/no-image.png')}}" alt=""></div>
     <div class="job-preview-info">
         <h2>
         <a href="/job-info/{{$job->id}}">{{ $job->title }}</a>
