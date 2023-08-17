@@ -40,3 +40,10 @@
         display: grid;
         place-items: center;
     }
+
+    .job-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0px;
+    }

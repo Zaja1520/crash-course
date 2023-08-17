@@ -56,4 +56,38 @@ class JobController extends Controller
             return back();
         }
     }
+
+    //edit controllers
+    public function editJob(Request $request, $id){
+        $job = Listings::findOrFail($id);
+        return view('pages.job-edit', ['job' => $job]);
+    }
+
+    public function updateJob(Request $request, Listings $id)
+    {
+        $formFields = $request->validate([
+
+            'title' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'email' => 'required',
+            'company' => 'required',
+            'website' => 'required',
+            'tags' => 'required',
+        ]);
+        // check if logo exist in request
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+        // update the form fields
+        $updateJob = $id->update($formFields);
+        if ($updateJob) {
+            //return with flash message
+
+            return back()->with('message', 'listing updated successfully');
+        }
+        else{
+            return back();
+        }
+    }
 }

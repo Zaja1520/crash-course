@@ -36,3 +36,7 @@ Route::get('/job-info/{id}', [JobController::class, 'jobProfile']);
 Route::get('/job-listings/create', [JobController::class, 'createJob']);
 // go to storeJob controller
 Route::post('/job-listings/create', [JobController::class, 'storeJob']);
+// go to edit job list
+Route::get('/job-listings/edit/{id}', [JobController::class, 'editJob']);
+// go to edit submit process
+Route::post('/job-listings/edit/{id}', [JobController::class, 'updateJob']);
