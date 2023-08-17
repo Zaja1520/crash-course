@@ -28,6 +28,9 @@ Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 
 //Job listing controller
+// show all job listings
 Route::get('/job-listings', [JobController::class, 'joblistings']);
-// Route::get('/job-listings/?={tag}', [JobController::class, 'jobListings']);
+// show only 1 job profile
 Route::get('/job-info/{id}', [JobController::class, 'jobProfile']);    
+// job listing form
+Route::get('/job-listings/create', [JobController::class, 'createJob']);

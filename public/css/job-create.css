@@ -1,0 +1,38 @@
+.header {
+    margin: 10px 0px;
+    background-color: orangered; 
+    padding: 25px;
+    display: grid; 
+    text-align: center;
+    justify-content: center;
+    color: white;
+    }
+    .card-container {
+      display: grid;
+      place-items: center; /* Center content vertically and horizontally */
+      margin: 20px 0px;
+    }
+
+    .form {
+        text-align: left;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #F2F2F2;
+    }
+
+    .form-container{
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+
+    }
+
+    .form-container button {
+      text-align: center;
+      background-color: rgb(22, 22, 21);
+    }
+
+    .button-container {
+        display: grid;
+        place-items: center;
+    }
