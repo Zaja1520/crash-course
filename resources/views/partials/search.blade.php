@@ -1,6 +1,7 @@
 <div class="parent-container">
     <div class="search-container">
-        <form class="search-form" action="/">
+        {{-- search and return it on /job-listings --}}
+        <form class="search-form" action="/job-listings"> 
             <div>
                 <i></i>
                 <input type="text" name="search" placeholder="Search Laravel Gigs..." />

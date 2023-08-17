@@ -11,8 +11,16 @@ class Listings extends Model
 
     public function scopeFilter($query, array $filters)
     {
+        //check if tag is exist then filter by tag
         if ($filters['tag'] ?? false){
             $query->where('tags', 'like', '%' . request('tag'). '%');
+        }
+
+        // check if user search something and filter it by title,desc,tags
+        if ($filters['search'] ?? false){
+            $query->where('title', 'like', '%' . request('search'). '%')
+            ->orWhere('description', 'like', '%' . request('search') . '%')
+            ->orWhere('tags', 'like', '%' . request('search') . '%');
         }
     }
 }
