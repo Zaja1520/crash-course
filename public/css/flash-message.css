@@ -1,0 +1,10 @@
+/* flash message design */
+.flash-message {
+    margin: 20px auto;
+    max-width: 80%;
+    text-align: center;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+}

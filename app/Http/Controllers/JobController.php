@@ -43,7 +43,8 @@ class JobController extends Controller
         ]);
         $storeJob = Listings::create($formFields);
         if ($storeJob) {
-            return redirect('/job-listings');
+            //return with flash message
+            return redirect('/job-listings')->with('message', 'listing created successfully');
         }
         else{
             return back();
