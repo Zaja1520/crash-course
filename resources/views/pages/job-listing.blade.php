@@ -27,3 +27,7 @@
     @endif
 </div>
 @endsection
+
+@section('script')
+    <script src="//unpkg.com/alpinejs" defer></script>
+@endsection
