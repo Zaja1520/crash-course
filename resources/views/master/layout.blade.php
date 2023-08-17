@@ -24,7 +24,8 @@
     @yield('content')
     <footer class="footer-container">
         <p>Copyright &copy; 2022, All Rights reserved</p>
-        <a href="create.html">Post Jobs</a>
+        {{-- link for create job list --}}
+        <a href="job-listings/create">Post Jobs</a>
     </footer>
 </body>
 @yield('script')

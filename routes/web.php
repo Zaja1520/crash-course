@@ -34,3 +34,5 @@ Route::get('/job-listings', [JobController::class, 'joblistings']);
 Route::get('/job-info/{id}', [JobController::class, 'jobProfile']);    
 // job listing form
 Route::get('/job-listings/create', [JobController::class, 'createJob']);
+// go to storeJob controller
+Route::post('/job-listings/create', [JobController::class, 'storeJob']);

@@ -15,7 +15,7 @@
         <p class="mb-4">Post a gig to find a developer</p>
       </header>
       <div class="card-container">
-      <form class="form" method="POST" action="/listings" enctype="multipart/form-data">
+      <form class="form" method="POST" action="/job-listings/create" enctype="multipart/form-data">
         @csrf
         <div class="form-container">
         <div class="mb-6">
@@ -83,7 +83,7 @@
           @enderror
         </div>
   
-        <div class="mb-6">
+        {{-- <div class="mb-6">
           <label for="logo" class="inline-block text-lg mb-2">
             Company Logo
           </label>
@@ -92,7 +92,7 @@
           @error('logo')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
           @enderror
-        </div>
+        </div> --}}
   
         <div class="mb-6">
           <label for="description" class="inline-block text-lg mb-2">

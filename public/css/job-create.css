@@ -26,6 +26,10 @@
       padding: 10px;
 
     }
+    /* for message error */
+    .form-container p {
+      color: red;
+    }
 
     .form-container button {
       text-align: center;

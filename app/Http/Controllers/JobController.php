@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Listings;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule; // for testing purposes
 
 class JobController extends Controller
 {
@@ -26,5 +27,26 @@ class JobController extends Controller
     {
         //return create job view
         return view('pages.job-create');
+    }
+
+    public function storeJob(Request $request)
+    {
+        $formFields = $request->validate([
+
+            'title' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'email' => 'required',
+            'company' => ['required', Rule::unique('listings','company')],
+            'website' => 'required',
+            'tags' => 'required',
+        ]);
+        $storeJob = Listings::create($formFields);
+        if ($storeJob) {
+            return redirect('/job-listings');
+        }
+        else{
+            return back();
+        }
     }
 }
