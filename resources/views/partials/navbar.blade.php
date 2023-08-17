@@ -49,10 +49,11 @@
   </style>
 @endsection
   <nav class="navbar-container">
-      <div class="logo-container"><img class="logo" src="{{asset('images/logo.png')}}" alt=""></div>
+      <div class="logo-container"><a href="{{ route('index') }}"><img class="logo" src="{{asset('images/logo.png')}}" alt=""></a></div>
       <div class="nav-link-container">
         <ul>
-          <li><a href="#">Register</a></li>
+          {{-- route through route name --}}
+          <li><a href="{{ route('registration') }}">Register</a></li>
           <li><a href="#">Login</a></li>
         </ul>
       </div>

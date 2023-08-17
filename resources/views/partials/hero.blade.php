@@ -10,7 +10,7 @@
       <div>
         @auth
         @else
-        <a class="register-shortcut" href="/register">Sign
+        <a class="register-shortcut" href="{{ route('registration') }}">Sign
           Up to List a Gig</a>
         @endauth
       </div>

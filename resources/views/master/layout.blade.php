@@ -25,7 +25,7 @@
     <footer class="footer-container">
         <p>Copyright &copy; 2022, All Rights reserved</p>
         {{-- link for create job list --}}
-        <a href="job-listings/create">Post Jobs</a>
+        <a href="{{ route('registration') }}">Post Jobs</a>
     </footer>
 </body>
 @yield('script')
