@@ -26,7 +26,20 @@
         <div><h2>Job Description</h2></div>
         <div><p>{{$job->description}}</p></div>
         <div class="button-row"><button class="button-5" role="button">Contact Employer</button></div>
+        <div style="display: flex; flex-direction: row; justify-content:center;">
+            <div>
+                <a style="background-color: black; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;" href="../job-listings/edit/{{$job->id}}">
+                    Edit
+                </a>
+            </div>
+            <div style="margin-left: 10px;">
+                <a style="background-color: black; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;" href="../job-listings/delete/{{$job->id}}">
+                    Delete
+                </a>
+            </div>
+        </div>
+        
     </div>
-    <div></div>
+    
 </div>
 @endsection
