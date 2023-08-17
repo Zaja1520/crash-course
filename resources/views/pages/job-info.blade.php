@@ -27,16 +27,22 @@
         <div><p>{{$job->description}}</p></div>
         <div class="button-row"><button class="button-5" role="button">Contact Employer</button></div>
         <div style="display: flex; flex-direction: row; justify-content:center;">
+            <form method="GET" action="../../job-listings/edit/{{$job->id}}">
             <div>
-                <a style="background-color: black; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;" href="../job-listings/edit/{{$job->id}}">
+                <button style="background-color: black; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;" href="../job-listings/edit/{{$job->id}}">
                     Edit
-                </a>
+                </button>
             </div>
+            </form>
+            <form method="POST" action="../../job-listings/delete/{{$job->id}}">
+                @csrf
+                @method('DELETE')
             <div style="margin-left: 10px;">
-                <a style="background-color: black; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;" href="../job-listings/delete/{{$job->id}}">
+                <button style="background-color: black; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;" href="../job-listings/delete/{{$job->id}}">
                     Delete
-                </a>
+                </button>
             </div>
+            </form>
         </div>
         
     </div>

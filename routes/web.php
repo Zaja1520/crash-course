@@ -40,3 +40,5 @@ Route::post('/job-listings/create', [JobController::class, 'storeJob']);
 Route::get('/job-listings/edit/{id}', [JobController::class, 'editJob']);
 // go to edit submit process
 Route::post('/job-listings/edit/{id}', [JobController::class, 'updateJob']);
+//delete listings
+Route::delete('/job-listings/delete/{id}', [JobController::class, 'deleteJob']);

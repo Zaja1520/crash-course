@@ -90,4 +90,17 @@ class JobController extends Controller
             return back();
         }
     }
+
+    public function deleteJob (Listings $id)
+    {
+        $deleteJob = $id->delete();
+        if ($deleteJob) {
+            //return with flash message
+
+            return redirect('/job-listings')->with('message', 'listing deleted successfully');
+        }
+        else{
+            return back();
+        }
+    }
 }
