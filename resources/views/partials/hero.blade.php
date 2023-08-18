@@ -5,7 +5,7 @@
         LARA<span class="text-black">GIGS</span>
       </h1>
       <p>
-        Find or post Laravel jobs & projects
+        Find or <a style="color:white;"href="{{ route('createJob') }}">post Laravel jobs & projects</a>
       </p>
       <div>
         @auth
