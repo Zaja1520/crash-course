@@ -58,7 +58,7 @@
     <ul class="nav-links">
       {{-- route through route name --}}
       <li>Welcome {{ auth()->user()->name }}</li>
-      <li><a href="#">Manage Settings</a></li>
+      <li><a href="{{route('manage-jobs')}}">Manage Listings</a></li>
       <li>
         <form action="{{ route('logout') }}" method="POST">
           @csrf

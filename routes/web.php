@@ -39,12 +39,12 @@ Route::get('/job-listings/create', [JobController::class, 'createJob'])->name('c
 Route::post('/job-listings/create', [JobController::class, 'storeJob'])
 ->middleware('auth');
 // go to edit job list
-Route::get('/job-listings/edit/{id}', [JobController::class, 'editJob'])
+Route::get('/job-listings/edit/{id}', [JobController::class, 'editJob'])->name('edit-job')
 ->middleware('auth');
 // go to edit submit process
 Route::post('/job-listings/edit/{id}', [JobController::class, 'updateJob']);
 //delete listings
-Route::delete('/job-listings/delete/{id}', [JobController::class, 'deleteJob'])
+Route::delete('/job-listings/delete/{id}', [JobController::class, 'deleteJob'])->name('delete-job')
 ->middleware('auth');
 
 // Authentication routes
@@ -58,3 +58,6 @@ Route::get('/login', [AuthController::class, 'loginUser'])->name('login')
 ->middleware('guest');
 //login process
 Route::post('/login', [AuthController::class, 'loginProcess']);
+//manage jobs route
+Route::get('/manage/jobs', [JobController::class, 'manageJobs'])->name('manage-jobs')
+->middleware('auth');

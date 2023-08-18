@@ -11,6 +11,10 @@
     text-align: center;
     background-color: indianred;
     color: white;
+    bottom: 0;
+    margin: 0;  
+    width: 100%;
+    position: fixed;
 }
 
 .footer-container a {
@@ -19,7 +23,7 @@
     </style>
     @yield('style')
 </head>
-<body>
+<body style="margin: 0px;">
     @yield('navbar')
     @yield('content')
     <footer class="footer-container">

@@ -106,4 +106,10 @@ class JobController extends Controller
             return back();
         }
     }
+    //manage jobs of current user
+    public function manageJobs(){
+        //query to match current user id on the job listings model
+        $jobs = Listings::where('user_id', auth()->id())->get();
+        return view('pages.job-manage', ['jobs' => $jobs]);
+    }
 }
