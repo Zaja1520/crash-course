@@ -45,3 +45,9 @@ Route::delete('/job-listings/delete/{id}', [JobController::class, 'deleteJob']);
 // Authentication routes
 Route::get('/registration', [AuthController::class, 'registerUser'])->name('registration');
 Route::post('/registration', [AuthController::class, 'registerProcess']);
+//logout route
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+//login route
+Route::get('/login', [AuthController::class, 'loginUser'])->name('login');
+// login process
+Route::post('/login', [AuthController::class, 'loginProcess']);

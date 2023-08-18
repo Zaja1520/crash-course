@@ -27,15 +27,17 @@
       
     }
 
-    ul {
+    .nav-links {
       padding-top: 30px;
       margin-left: -20px;
-      display: grid;
-      grid-template-columns: 150px 150px; 
+      display: flex;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: space;
     }
-
+    .nav-links li {
+      margin-right: 30px;
+    }
     li, a{
       text-decoration: none;
       list-style-type: none;
@@ -48,13 +50,35 @@
 
   </style>
 @endsection
+
+@if (auth()->check())
+<nav class="navbar-container">
+  <div class="logo-container"><a href="{{ route('index') }}"><img class="logo" src="{{asset('images/logo.png')}}" alt=""></a></div>
+  <div class="nav-link-container">
+    <ul class="nav-links">
+      {{-- route through route name --}}
+      <li>Welcome {{ auth()->user()->name }}</li>
+      <li><a href="#">Manage Settings</a></li>
+      <li>
+        <form action="{{ route('logout') }}" method="POST">
+          @csrf
+          <button type="submit">Logout</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
+@else
   <nav class="navbar-container">
-      <div class="logo-container"><a href="{{ route('index') }}"><img class="logo" src="{{asset('images/logo.png')}}" alt=""></a></div>
-      <div class="nav-link-container">
-        <ul>
-          {{-- route through route name --}}
-          <li><a href="{{ route('registration') }}">Register</a></li>
-          <li><a href="#">Login</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="logo-container"><a href="{{ route('index') }}"><img class="logo" src="{{asset('images/logo.png')}}" alt=""></a></div>
+    <div class="nav-link-container">
+      <ul class="nav-links">
+        {{-- route through route name --}}
+        <li><a href="{{ route('registration') }}">Register</a></li>
+        <li><a href="{{ route('login') }}">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+@endif
+  

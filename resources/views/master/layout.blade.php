@@ -28,5 +28,6 @@
         <a href="{{ route('registration') }}">Post Jobs</a>
     </footer>
 </body>
+<script src="//unpkg.com/alpinejs" defer></script>
 @yield('script')
 </html>

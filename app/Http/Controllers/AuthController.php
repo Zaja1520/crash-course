@@ -31,9 +31,38 @@ class AuthController extends Controller
             'password' => bcrypt($request->password),
         ]);
         if ($user) {
-            return redirect()->back()->with('message', 'Register successful');
+            //login user after registration
+            auth()->login($user);
+            return redirect()->route('index')->with('message', 'Register successful');
         }
         }
 
+    }
+
+    public function loginUser(){
+        //show login form
+        return view('pages.auth.login');
+    }
+
+    public function loginProcess(Request $request) {
+        //validate form data
+        $formFields = $request->validate([
+            'email' => ['required','email','max:255'],
+            'password' => ['required', 'min:6']
+        ]);
+        
+        //login attempt
+        if(auth()->attempt($formFields)){
+            $request->session()->regenerate();
+            return redirect('/')->with('message', 'You are now logged in!');
+        }
+
+    }
+
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/')->with('message', 'logged out successfully');
     }
 }
