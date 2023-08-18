@@ -68,6 +68,11 @@ class JobController extends Controller
 
     public function updateJob(Request $request, Listings $id)
     {
+
+        if($id->user_id != auth()->id()) {
+            abort(403, 'You are not allowed to update this job');
+        }
+
         $formFields = $request->validate([
 
             'title' => 'required',
