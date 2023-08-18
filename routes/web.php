@@ -30,24 +30,31 @@ Route::post('/login', [UserController::class, 'login']);
 // show all job listings
 Route::get('/job-listings', [JobController::class, 'joblistings']);
 // show only 1 job profile
-Route::get('/job-info/{id}', [JobController::class, 'jobProfile']);    
+Route::get('/job-info/{id}', [JobController::class, 'jobProfile'])
+->middleware('auth');    
 // job listing form
-Route::get('/job-listings/create', [JobController::class, 'createJob'])->name('createJob');
+Route::get('/job-listings/create', [JobController::class, 'createJob'])->name('createJob')
+->middleware('auth');
 // go to storeJob controller
-Route::post('/job-listings/create', [JobController::class, 'storeJob']);
+Route::post('/job-listings/create', [JobController::class, 'storeJob'])
+->middleware('auth');
 // go to edit job list
-Route::get('/job-listings/edit/{id}', [JobController::class, 'editJob']);
+Route::get('/job-listings/edit/{id}', [JobController::class, 'editJob'])
+->middleware('auth');
 // go to edit submit process
 Route::post('/job-listings/edit/{id}', [JobController::class, 'updateJob']);
 //delete listings
-Route::delete('/job-listings/delete/{id}', [JobController::class, 'deleteJob']);
+Route::delete('/job-listings/delete/{id}', [JobController::class, 'deleteJob'])
+->middleware('auth');
 
 // Authentication routes
-Route::get('/registration', [AuthController::class, 'registerUser'])->name('registration');
+Route::get('/registration', [AuthController::class, 'registerUser'])->name('registration')
+->middleware('guest');
 Route::post('/registration', [AuthController::class, 'registerProcess']);
 //logout route 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 //login route
-Route::get('/login', [AuthController::class, 'loginUser'])->name('login');
-// login process
+Route::get('/login', [AuthController::class, 'loginUser'])->name('login')
+->middleware('guest');
+//login process
 Route::post('/login', [AuthController::class, 'loginProcess']);
